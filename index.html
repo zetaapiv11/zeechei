@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zeetasi — All-in-One Discord Bot</title>
+<meta name="description" content="Zeetasi is an all-in-one Discord bot featuring games, economy, AI, voice AI, music, moderation and more.">
+
+<meta property="og:title" content="Zeetasi — All-in-One Discord Bot">
+<meta property="og:description" content="Games, economy, AI voice, music and moderation — all inside one Discord bot.">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ============ NAVBAR ============ -->
+<header class="navbar" id="navbar">
+  <div class="navbar__inner">
+    <a href="#home" class="navbar__brand">
+      <span class="navbar__mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="30" height="30">
+          <polygon points="16,2 29,9 29,23 16,30 3,23 3,9" fill="none" stroke="url(#navGrad)" stroke-width="2"/>
+          <polygon points="16,9 22,12.5 22,19.5 16,23 10,19.5 10,12.5" fill="url(#navGrad)" opacity="0.9"/>
+          <defs>
+            <linearGradient id="navGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#7C5CFF"/>
+              <stop offset="1" stop-color="#21E6C1"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </span>
+      <span class="navbar__name">Zeetasi</span>
+    </a>
+
+    <nav class="navbar__menu" id="navMenu" aria-label="Primary">
+      <a href="#home" class="navlink is-active">Home</a>
+      <a href="#features" class="navlink">Features</a>
+      <a href="#games" class="navlink">Games</a>
+      <a href="#ai" class="navlink">AI</a>
+      <a href="#music" class="navlink">Music</a>
+      <a href="#faq" class="navlink">FAQ</a>
+    </nav>
+
+    <div class="navbar__actions">
+      <a class="btn btn--primary btn--sm" href="https://discord.com/oauth2/authorize?client_id=1544557931247308822" target="_blank" rel="noopener">Add to Discord</a>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#home" class="mobile-menu__link">Home</a>
+    <a href="#features" class="mobile-menu__link">Features</a>
+    <a href="#games" class="mobile-menu__link">Games</a>
+    <a href="#ai" class="mobile-menu__link">AI</a>
+    <a href="#music" class="mobile-menu__link">Music</a>
+    <a href="#faq" class="mobile-menu__link">FAQ</a>
+    <a class="btn btn--primary btn--block" href="https://discord.com/oauth2/authorize?client_id=1544557931247308822" target="_blank" rel="noopener">Add to Discord</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="home">
+    <div class="hero__field" aria-hidden="true"></div>
+    <div class="hero__inner">
+      <div class="hero__copy reveal">
+        <p class="hero__kicker">All-in-one Discord bot</p>
+        <h1 class="hero__title">Meet <span class="grad-text">Zeetasi</span></h1>
+        <p class="hero__subtitle">Your Ultimate All-in-One Discord Bot</p>
+        <p class="hero__desc">Power up your Discord server with games, economy, music, AI, voice conversations, moderation and much more — all inside one powerful bot.</p>
+        <div class="hero__actions">
+          <a class="btn btn--primary btn--lg" href="https://discord.com/oauth2/authorize?client_id=1544557931247308822" target="_blank" rel="noopener">Add to Discord</a>
+          <a class="btn btn--ghost btn--lg" href="#features" data-scroll>Explore Features</a>
+        </div>
+      </div>
+
+      <div class="hero__panel reveal">
+        <div class="bot-avatar" aria-hidden="true">
+          <div class="bot-avatar__ring"></div>
+          <div class="bot-avatar__glow"></div>
+          <svg viewBox="0 0 120 120" class="bot-avatar__mark">
+            <polygon points="60,8 108,34 108,86 60,112 12,86 12,34" fill="none" stroke="url(#heroGrad)" stroke-width="3"/>
+            <polygon points="60,32 84,45 84,75 60,88 36,75 36,45" fill="url(#heroGrad)" opacity="0.85"/>
+            <circle cx="60" cy="60" r="10" fill="#0A0B10"/>
+            <defs>
+              <linearGradient id="heroGrad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#7C5CFF"/>
+                <stop offset="1" stop-color="#21E6C1"/>
+              </linearGradient>
+            </defs>
+          </svg>
+          <span class="bot-avatar__status" title="Online"></span>
+        </div>
+
+        <div class="terminal" role="img" aria-label="Example command: zcash returns the user's balance">
+          <div class="terminal__bar">
+            <span class="terminal__dot"></span><span class="terminal__dot"></span><span class="terminal__dot"></span>
+            <span class="terminal__label">zeetasi — command</span>
+          </div>
+          <div class="terminal__body" id="heroTerminalBody">
+            <!-- filled by script.js -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PREFIXLESS / Z PREFIX ============ -->
+  <section class="prefix" id="prefix">
+    <div class="section__inner">
+      <div class="prefix__grid">
+        <div class="reveal">
+          <p class="eyebrow">Z Prefix</p>
+          <h2 class="section__title">No slash. Just type.</h2>
+          <p class="section__desc">Zeetasi supports fast prefix commands. No need to type / before every command.</p>
+        </div>
+        <div class="prefix__commands reveal" aria-label="Example commands">
+          <code>zcash</code>
+          <code>zubj all</code>
+          <code>zdaily</code>
+          <code>zwork</code>
+          <code>zhunt</code>
+          <code>zslots 100k</code>
+          <code>zprofile</code>
+          <code>zleaderboard</code>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FEATURES ============ -->
+  <section class="features" id="features">
+    <div class="section__inner">
+      <div class="section__head reveal">
+        <p class="eyebrow">What's inside</p>
+        <h2 class="section__title">Everything your server needs</h2>
+      </div>
+
+      <div class="feature-grid" id="featureGrid">
+        <!-- feature cards injected by markup below -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ GAMES ============ -->
+  <section class="games" id="games">
+    <div class="section__inner">
+      <div class="section__head reveal">
+        <p class="eyebrow">Play · Earn · Compete</p>
+        <h2 class="section__title">Play. Earn. Compete.</h2>
+      </div>
+      <div class="game-grid" id="gameGrid"></div>
+    </div>
+  </section>
+
+  <!-- ============ ECONOMY ============ -->
+  <section class="economy" id="economy">
+    <div class="section__inner economy__inner">
+      <div class="reveal">
+        <p class="eyebrow">Virtual economy</p>
+        <h2 class="section__title">Build your fortune</h2>
+        <p class="section__desc">Grind, gamble and grow a fortune in Zeetasi Coins — a fully in-bot virtual currency with no real-world value.</p>
+        <p class="economy__note">🪙 Zeetasi Coins are an in-bot virtual currency only. They are not real money and have no cash value.</p>
+      </div>
+      <ol class="economy__flow reveal" aria-label="Economy progression">
+        <li>Daily</li>
+        <li>Work</li>
+        <li>Play games</li>
+        <li>Hunt</li>
+        <li>Earn coins</li>
+        <li>Buy items</li>
+        <li>Upgrade</li>
+        <li>Battle</li>
+        <li>Leaderboard</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ AI ============ -->
+  <section class="ai" id="ai">
+    <div class="section__inner">
+      <div class="section__head reveal">
+        <p class="eyebrow">Companion</p>
+        <h2 class="section__title">Your AI companion</h2>
+      </div>
+
+      <div class="ai__grid">
+        <div class="ai-card reveal">
+          <h3>🤖 AI Chat</h3>
+          <p>Ask questions and interact with AI right inside your server's text channels.</p>
+        </div>
+        <div class="ai-card reveal">
+          <h3>🎤 AI Voice</h3>
+          <p>Join a Discord voice channel and have a natural, spoken conversation with the bot.</p>
+        </div>
+      </div>
+
+      <div class="ai-flow reveal" aria-label="AI voice pipeline">
+        <div class="ai-flow__node">USER 🎤</div>
+        <div class="ai-flow__line"></div>
+        <div class="ai-flow__node">Speech-to-Text</div>
+        <div class="ai-flow__line"></div>
+        <div class="ai-flow__node">AI</div>
+        <div class="ai-flow__line"></div>
+        <div class="ai-flow__node">Text-to-Speech</div>
+        <div class="ai-flow__line"></div>
+        <div class="ai-flow__node">BOT 🔊</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MUSIC ============ -->
+  <section class="music" id="music">
+    <div class="section__inner music__inner">
+      <div class="reveal">
+        <p class="eyebrow">Voice channels</p>
+        <h2 class="section__title">Turn your server into a music hub</h2>
+        <div class="music__controls" aria-label="Music controls">
+          <span>▶ Play</span><span>⏭ Skip</span><span>⏸ Pause</span><span>▶ Resume</span>
+          <span>🔊 Volume</span><span>🔁 Loop</span><span>🔀 Shuffle</span><span>📜 Queue</span><span>🎵 Autoplay</span>
+        </div>
+      </div>
+      <div class="music__example reveal">
+        <p class="music__example-label">Try it</p>
+        <code>zplay song name</code>
+        <p class="music__example-note">Command format may vary — check <code>zhelp music</code> in your server for the exact syntax.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MODERATION ============ -->
+  <section class="moderation" id="moderation">
+    <div class="section__inner">
+      <div class="section__head reveal">
+        <p class="eyebrow">Server safety</p>
+        <h2 class="section__title">Keep your server safe</h2>
+      </div>
+      <div class="mod-grid">
+        <div class="mod-card reveal">Moderation actions</div>
+        <div class="mod-card reveal">Warnings</div>
+        <div class="mod-card reveal">User management</div>
+        <div class="mod-card reveal">Server utilities</div>
+        <div class="mod-card reveal">Permission checks</div>
+        <div class="mod-card reveal">Logging</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COMMAND SHOWCASE ============ -->
+  <section class="showcase" id="showcase">
+    <div class="section__inner">
+      <div class="section__head reveal">
+        <p class="eyebrow">Live look</p>
+        <h2 class="section__title">Command showcase</h2>
+      </div>
+
+      <div class="showcase__panel reveal">
+        <div class="showcase__tabs" id="showcaseTabs" role="tablist" aria-label="Command categories"></div>
+        <div class="terminal terminal--wide">
+          <div class="terminal__bar">
+            <span class="terminal__dot"></span><span class="terminal__dot"></span><span class="terminal__dot"></span>
+            <span class="terminal__label" id="showcaseLabel">economy</span>
+          </div>
+          <div class="terminal__body" id="showcaseBody" role="tabpanel"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ LIVE TYPING TERMINAL ============ -->
+  <section class="livecmd">
+    <div class="section__inner">
+      <div class="section__head reveal">
+        <p class="eyebrow">Watch it run</p>
+        <h2 class="section__title">Commands, live</h2>
+      </div>
+      <div class="terminal terminal--wide reveal">
+        <div class="terminal__bar">
+          <span class="terminal__dot"></span><span class="terminal__dot"></span><span class="terminal__dot"></span>
+          <span class="terminal__label">zeetasi — live</span>
+        </div>
+        <div class="terminal__body" id="liveTerminalBody"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ STATS ============ -->
+  <section class="stats">
+    <div class="section__inner stats__grid">
+      <div class="stat-card reveal">
+        <span class="stat-card__value" data-count="50" data-suffix="+">0</span>
+        <span class="stat-card__label">Game &amp; utility commands</span>
+      </div>
+      <div class="stat-card reveal">
+        <span class="stat-card__value" data-count="10" data-suffix="+">0</span>
+        <span class="stat-card__label">Game modes</span>
+      </div>
+      <div class="stat-card reveal">
+        <span class="stat-card__value stat-card__value--text">AI</span>
+        <span class="stat-card__label">Powered conversations</span>
+      </div>
+      <div class="stat-card reveal">
+        <span class="stat-card__value stat-card__value--text">24/7</span>
+        <span class="stat-card__label">Discord bot uptime target</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHY ZEETASI ============ -->
+  <section class="why">
+    <div class="section__inner">
+      <div class="section__head reveal">
+        <p class="eyebrow">The pitch</p>
+        <h2 class="section__title">Why choose Zeetasi?</h2>
+      </div>
+      <div class="why-grid" id="whyGrid"></div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="faq" id="faq">
+    <div class="section__inner faq__inner">
+      <div class="section__head reveal">
+        <p class="eyebrow">Questions</p>
+        <h2 class="section__title">Frequently asked</h2>
+      </div>
+      <div class="faq__list" id="faqList"></div>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section class="cta">
+    <div class="section__inner cta__inner reveal">
+      <h2 class="cta__title">Ready to upgrade your Discord server?</h2>
+      <p class="cta__subtitle">Games, economy, music, AI and more — all in one bot.</p>
+      <div class="cta__actions">
+        <a class="btn btn--primary btn--lg" href="https://discord.com/oauth2/authorize?client_id=1544557931247308822" target="_blank" rel="noopener">Add Zeetasi to Discord</a>
+        <a class="btn btn--ghost btn--lg" href="#features" data-scroll>Explore Features</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="section__inner footer__inner">
+    <div class="footer__brand">
+      <span class="navbar__name">Zeetasi</span>
+      <p>Your Ultimate Discord All-in-One Bot</p>
+    </div>
+    <nav class="footer__links" aria-label="Footer">
+      <a href="#home">Home</a>
+      <a href="#features">Features</a>
+      <a href="#games">Games</a>
+      <a href="#ai">AI</a>
+      <a href="#music">Music</a>
+      <a href="#faq">FAQ</a>
+      <a href="https://discord.com/oauth2/authorize?client_id=1544557931247308822" target="_blank" rel="noopener">Add Bot</a>
+    </nav>
+    <a class="footer__discord" href="https://discord.com/oauth2/authorize?client_id=1544557931247308822" target="_blank" rel="noopener" aria-label="Add Zeetasi on Discord">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M20.3 4.4A19.7 19.7 0 0 0 15.6 3l-.3.6a14 14 0 0 1 4 1.6 13.8 13.8 0 0 0-16.6 0 14 14 0 0 1 4-1.6L6.4 3a19.7 19.7 0 0 0-4.7 1.4C.4 9 -.3 13.4.1 17.8a19.9 19.9 0 0 0 5.8 2.9l.9-1.4a12.9 12.9 0 0 1-1.9-.9c.2-.1.3-.3.5-.4a14.2 14.2 0 0 0 12.2 0l.5.4c-.6.4-1.3.7-1.9.9l.9 1.4a19.8 19.8 0 0 0 5.8-2.9c.5-5.1-.8-9.5-2.6-13.4ZM8.5 15.1c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Zm7 0c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Z"/></svg>
+      Add Zeetasi
+    </a>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+<script src="script.js"></script>
+</body>
+</html>
